@@ -73,11 +73,14 @@ export default {
 .navbar-logo-item {
   font-family: monospace;
 }
-.background {
+body {
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
   overflow: hidden;
 }
+body::-webkit-scrollbar { width: 0 !important }
 .hero-head {
-  opacity: 0;
+  display:none;
 }
 .hero-body {
   align-items: flex-end !important;
@@ -85,6 +88,7 @@ export default {
 
 .hero-body p {
     animation: fadein 6s;
+    overflow: hidden !important;
 }
 
 @keyframes fadein {

@@ -119,7 +119,9 @@ export default {
         this.scene = new THREE.Scene();
         this.scene.background = new THREE.Color(0x111111);
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth/ window.innerHeight, 0.1, 1000);
-        this.renderer = new THREE.WebGLRenderer();
+        this.renderer = new THREE.WebGLRenderer({
+            antialias: true,
+        });
 
         this.container.appendChild( this.renderer.domElement );
 
@@ -169,5 +171,6 @@ export default {
   top: 0;
   left: 0;
   z-index: -100;
+  overflow: hidden;
 }
 </style>

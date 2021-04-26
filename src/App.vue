@@ -20,4 +20,7 @@ export default {
   background-size: cover;
   backdrop-filter: blur(20px);
 }
+html {
+  overflow: hidden !important;
+}
 </style>
