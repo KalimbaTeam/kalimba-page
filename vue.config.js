@@ -1,3 +1,11 @@
 module.exports = {
-    publicPath: '/kalimba-page/'
+    publicPath: '/',
+    chainWebpack: config => {
+        config
+            .plugin('html')
+            .tap(args => {
+                args[0].title = "Kalimba";
+                return args;
+            })
+    }
 }
