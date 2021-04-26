@@ -1,13 +1,12 @@
 <template>
   <div>
-    <section class="hero is-primary is-fullheight-with-navbar">
+    <section class="hero is-fullheight-with-navbar">
       <!-- Hero head: will stick at the top -->
       <div class="hero-head">
         <b-navbar>
           <template #brand>
             <b-navbar-item
               class="navbar-logo-item"
-              tag="router-link"
               :to="{ path: '/' }"
             >
               <b-image
@@ -46,8 +45,9 @@
       <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container">
-          <p class="title">Secure, private and open-source messaging</p>
-          <p class="subtitle">Available at your fingertips</p>
+          <p class="title has-text-white has-text-centered">Kalimba</p>
+          <p class="subtitle has-text-centered">Secure, private and open-source messaging</p>
+          <background class="background"/>
         </div>
       </div>
 
@@ -56,6 +56,14 @@
     </section>
   </div>
 </template>
+<script>
+import Background from './background';
+export default {
+  components: {
+    Background,
+  },
+}
+</script>
 <style scoped>
 .navbar-logo {
   filter: invert(1);
@@ -64,5 +72,24 @@
 }
 .navbar-logo-item {
   font-family: monospace;
+}
+.background {
+  overflow: hidden;
+}
+.hero-head {
+  opacity: 0;
+}
+.hero-body {
+  align-items: flex-end !important;
+}
+
+.hero-body p {
+    animation: fadein 6s;
+}
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  25% { opacity: 0; }
+  100%   { opacity: 1; }
 }
 </style>
